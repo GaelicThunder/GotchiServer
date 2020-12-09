@@ -4,7 +4,7 @@ go:
 - '1.15'
 branches:
   only:
-  - master
+  - main
 before_install:
 - go mod vendor
 - go test -race
