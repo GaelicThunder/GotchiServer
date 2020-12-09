@@ -14,7 +14,7 @@ func main() {
 	lambda.Start(GotchiStatus)
 }
 
-// GotchiSubStatus is the gotchi core logic which permit to do the following action
+// GotchiStatus is the gotchi core logic which permit to do the following action
 // GET /myGotchiID: return a list of the gotchi seen
 // PUST /myGotchiID/gotchiID: permit to save a new gotchi
 func GotchiStatus(ctx context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
