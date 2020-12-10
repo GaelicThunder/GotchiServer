@@ -21,7 +21,7 @@ func GotchiStatus(ctx context.Context, request events.APIGatewayProxyRequest) (e
 
 	var buf bytes.Buffer
 	body, err := json.Marshal(map[string]interface{}{
-		"message": fmt.Sprintf("Oh hello there, I just recive your request with method %s and with this body: %s", request.HTTPMethod, request.Body),
+		"message": fmt.Sprintf("Oh hello there, I just recive your request with method %s and with this body: '%s' path: '%s'", request.HTTPMethod, request.Body, request.Path),
 	})
 	if err != nil {
 		return events.APIGatewayProxyResponse{StatusCode: 404}, err
