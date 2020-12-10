@@ -1,5 +1,4 @@
 language: go
-sudo: true
 go:
 - '1.15'
 before_install:
@@ -25,4 +24,4 @@ deploy:
   on:
     branch: main
 before_deploy:
-   - zip -r deploy.zip gotchiserver
+   - zip -r deploy.zip gotchiServer
