@@ -2,9 +2,6 @@ language: go
 sudo: true
 go:
 - '1.15'
-branches:
-  only:
-  - main
 before_install:
 - go mod vendor
 - go test -race
@@ -25,5 +22,7 @@ deploy:
   role: $ROLE
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
+  on:
+    branch: main
 before_deploy:
    - zip -r deploy.zip gotchiserver
