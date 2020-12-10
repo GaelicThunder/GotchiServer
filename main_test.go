@@ -17,7 +17,7 @@ func TestGotchiHandler(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Error: %s\n", err.Error())
 	}
-	expectedResponse := "{\"message\":\"Oh hello there, I just recive your request with method post and with this body: example_body\"}"
+	expectedResponse := "{\"message\":\"Oh hello there, I just recive your request with method post and with this body: 'example_body' path: ''\"}"
 	if event.Body != expectedResponse {
 		t.Fatalf("Wrong body returned, expected %s but having %s\n", expectedResponse, event.Body)
 	}
