@@ -13,7 +13,7 @@ deploy:
   handler_name: /gotchiServer
   region: eu-central-1
   runtime: go1.x
-  function_name: gotchiserver
+  function_name: gotchiServer
   publish: true 
   zip: deploy.zip
   timeout: 300
