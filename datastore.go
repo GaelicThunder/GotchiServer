@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/guregu/dynamo"
 )
@@ -55,11 +54,8 @@ func (d *DyanamoDB) SaveGotchi(myGotchiID, newGotchiID string) error {
 
 // NewDynamoDB return a dynamoDB object which respect the Database interface
 func NewDynamoDB() Database {
-	awsID := os.Getenv("AWS_ACCESS_KEY_ID")
-	awsKey := os.Getenv("AWS_SECRET_ACCESS_KEY")
 	session, err := session.NewSession(&aws.Config{
-		Region:      aws.String("eu-central-1"),
-		Credentials: credentials.NewStaticCredentials(awsID, awsKey, ""),
+		Region: aws.String("eu-central-1"),
 	})
 	if err != nil {
 		log.Printf("Error while setup the session: %s\n", err.Error())
